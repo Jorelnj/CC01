@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CC01.DAL
+namespace CC01.WinForms
 {
-    public class Class1
+    class Formulaires
     {
+
     }
 }

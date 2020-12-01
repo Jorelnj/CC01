@@ -31,29 +31,26 @@
             this.txtNom = new System.Windows.Forms.TextBox();
             this.lblNom = new System.Windows.Forms.Label();
             this.lblPrenom = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtLieu = new System.Windows.Forms.TextBox();
+            this.txtTelephone = new System.Windows.Forms.TextBox();
             this.btnCreer = new System.Windows.Forms.Button();
             this.btnSupprimer = new System.Windows.Forms.Button();
             this.btnModifie = new System.Windows.Forms.Button();
             this.btnRechercher = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblLieu = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblTéléphone = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblIdentification = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtIdentification = new System.Windows.Forms.TextBox();
             this.btnImprimer = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.pBoxEtudiant = new System.Windows.Forms.PictureBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtEtudiantQR = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxEtudiant)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNom
@@ -84,13 +81,13 @@
             this.lblPrenom.TabIndex = 3;
             this.lblPrenom.Text = "Prenom";
             // 
-            // textBox2
+            // txtPrenom
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(144, 83);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 22);
-            this.textBox2.TabIndex = 2;
+            this.txtPrenom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrenom.Location = new System.Drawing.Point(144, 83);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(245, 22);
+            this.txtPrenom.TabIndex = 2;
             // 
             // lblDate
             // 
@@ -112,21 +109,21 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Identification";
             // 
-            // textBox3
+            // txtLieu
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(144, 169);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 22);
-            this.textBox3.TabIndex = 6;
+            this.txtLieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLieu.Location = new System.Drawing.Point(144, 169);
+            this.txtLieu.Name = "txtLieu";
+            this.txtLieu.Size = new System.Drawing.Size(245, 22);
+            this.txtLieu.TabIndex = 6;
             // 
-            // textBox4
+            // txtTelephone
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(144, 221);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(245, 22);
-            this.textBox4.TabIndex = 8;
+            this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelephone.Location = new System.Drawing.Point(144, 221);
+            this.txtTelephone.Name = "txtTelephone";
+            this.txtTelephone.Size = new System.Drawing.Size(245, 22);
+            this.txtTelephone.TabIndex = 8;
             // 
             // btnCreer
             // 
@@ -139,6 +136,7 @@
             this.btnCreer.TabIndex = 10;
             this.btnCreer.Text = "Créer";
             this.btnCreer.UseVisualStyleBackColor = false;
+            this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
             // btnSupprimer
             // 
@@ -177,14 +175,6 @@
             this.btnRechercher.Text = "Rechercher";
             this.btnRechercher.UseVisualStyleBackColor = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(144, 129);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 22);
-            this.textBox1.TabIndex = 15;
-            // 
             // lblLieu
             // 
             this.lblLieu.AutoSize = true;
@@ -215,13 +205,13 @@
             this.lblTéléphone.TabIndex = 19;
             this.lblTéléphone.Text = "Téléphone";
             // 
-            // textBox5
+            // txtEmail
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(144, 268);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(245, 22);
-            this.textBox5.TabIndex = 18;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(144, 268);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(245, 22);
+            this.txtEmail.TabIndex = 18;
             // 
             // lblIdentification
             // 
@@ -233,13 +223,13 @@
             this.lblIdentification.TabIndex = 21;
             this.lblIdentification.Text = "Identification";
             // 
-            // textBox6
+            // txtIdentification
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(144, 311);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(245, 22);
-            this.textBox6.TabIndex = 20;
+            this.txtIdentification.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdentification.Location = new System.Drawing.Point(144, 311);
+            this.txtIdentification.Name = "txtIdentification";
+            this.txtIdentification.Size = new System.Drawing.Size(245, 22);
+            this.txtIdentification.TabIndex = 20;
             // 
             // btnImprimer
             // 
@@ -253,84 +243,62 @@
             this.btnImprimer.Text = "Imprimer";
             this.btnImprimer.UseVisualStyleBackColor = false;
             // 
-            // dataGridView1
+            // pBoxEtudiant
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(448, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(604, 333);
-            this.dataGridView1.TabIndex = 24;
+            this.pBoxEtudiant.Location = new System.Drawing.Point(441, 33);
+            this.pBoxEtudiant.Name = "pBoxEtudiant";
+            this.pBoxEtudiant.Size = new System.Drawing.Size(224, 133);
+            this.pBoxEtudiant.TabIndex = 25;
+            this.pBoxEtudiant.TabStop = false;
+            this.pBoxEtudiant.Click += new System.EventHandler(this.pBoxEtudiant_Click);
             // 
-            // Column1
+            // dateTimePicker1
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column1.DataPropertyName = "Nom";
-            this.Column1.HeaderText = "Nom";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 54;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
+            this.dateTimePicker1.Location = new System.Drawing.Point(144, 125);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(245, 23);
+            this.dateTimePicker1.TabIndex = 26;
             // 
-            // Column2
+            // txtEtudiantQR
             // 
-            this.Column2.DataPropertyName = "Prenom";
-            this.Column2.HeaderText = "Prenom";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Date de naissance";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Identification";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.txtEtudiantQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEtudiantQR.Location = new System.Drawing.Point(441, 218);
+            this.txtEtudiantQR.Name = "txtEtudiantQR";
+            this.txtEtudiantQR.Size = new System.Drawing.Size(224, 22);
+            this.txtEtudiantQR.TabIndex = 27;
+            this.txtEtudiantQR.Text = "Entrer le code de l\'etudiant";
             // 
             // FormEtudiant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 573);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(813, 573);
+            this.Controls.Add(this.txtEtudiantQR);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.pBoxEtudiant);
             this.Controls.Add(this.btnImprimer);
             this.Controls.Add(this.lblIdentification);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.txtIdentification);
             this.Controls.Add(this.lblTéléphone);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblLieu);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnRechercher);
             this.Controls.Add(this.btnModifie);
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnCreer);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtTelephone);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtLieu);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lblPrenom);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.lblNom);
             this.Controls.Add(this.txtNom);
             this.Name = "FormEtudiant";
             this.Text = "FormEtudiant";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBoxEtudiant)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -341,28 +309,25 @@
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.Label lblPrenom;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtLieu;
+        private System.Windows.Forms.TextBox txtTelephone;
         private System.Windows.Forms.Button btnCreer;
         private System.Windows.Forms.Button btnSupprimer;
         private System.Windows.Forms.Button btnModifie;
         private System.Windows.Forms.Button btnRechercher;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblLieu;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblTéléphone;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblIdentification;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtIdentification;
         private System.Windows.Forms.Button btnImprimer;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.PictureBox pBoxEtudiant;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtEtudiantQR;
     }
 }
 

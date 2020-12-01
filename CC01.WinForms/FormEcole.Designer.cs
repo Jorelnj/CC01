@@ -40,7 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRechercher
@@ -78,6 +80,7 @@
             this.btnSupprimer.TabIndex = 16;
             this.btnSupprimer.Text = "Supprimer";
             this.btnSupprimer.UseVisualStyleBackColor = false;
+            this.btnSupprimer.Click += new System.EventHandler(this.btnSupprimer_Click);
             // 
             // btnCreer
             // 
@@ -94,7 +97,7 @@
             // txtNomEcole
             // 
             this.txtNomEcole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomEcole.Location = new System.Drawing.Point(154, 107);
+            this.txtNomEcole.Location = new System.Drawing.Point(136, 213);
             this.txtNomEcole.Name = "txtNomEcole";
             this.txtNomEcole.Size = new System.Drawing.Size(300, 22);
             this.txtNomEcole.TabIndex = 19;
@@ -103,7 +106,7 @@
             // 
             this.lblNomEcole.AutoSize = true;
             this.lblNomEcole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomEcole.Location = new System.Drawing.Point(37, 113);
+            this.lblNomEcole.Location = new System.Drawing.Point(9, 219);
             this.lblNomEcole.Name = "lblNomEcole";
             this.lblNomEcole.Size = new System.Drawing.Size(99, 16);
             this.lblNomEcole.TabIndex = 20;
@@ -113,7 +116,7 @@
             // 
             this.lblFiliere.AutoSize = true;
             this.lblFiliere.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiliere.Location = new System.Drawing.Point(37, 161);
+            this.lblFiliere.Location = new System.Drawing.Point(9, 245);
             this.lblFiliere.Name = "lblFiliere";
             this.lblFiliere.Size = new System.Drawing.Size(45, 16);
             this.lblFiliere.TabIndex = 22;
@@ -122,7 +125,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(154, 155);
+            this.textBox1.Location = new System.Drawing.Point(136, 245);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(300, 22);
             this.textBox1.TabIndex = 21;
@@ -131,7 +134,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 215);
+            this.label1.Location = new System.Drawing.Point(9, 281);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 16);
             this.label1.TabIndex = 24;
@@ -140,7 +143,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(175, 209);
+            this.textBox2.Location = new System.Drawing.Point(136, 281);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(300, 22);
             this.textBox2.TabIndex = 23;
@@ -148,18 +151,27 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(602, 21);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(166, 131);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(404, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(374, 150);
+            this.dataGridView1.TabIndex = 26;
+            // 
             // FormEcole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
@@ -172,8 +184,8 @@
             this.Controls.Add(this.btnSupprimer);
             this.Controls.Add(this.btnCreer);
             this.Name = "FormEcole";
-            this.Text = "FormEcole";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +204,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
