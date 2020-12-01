@@ -28,16 +28,7 @@ namespace CC01.DAL
             {
                 file.Create().Close();
                 file.Refresh();
-            }
-
-            if (file.Length > 0)
-            {
-                using (StreamReader sr = new StreamReader(file.FullName))
-                {
-                    string json = sr.ReadToEnd();
-                    etudiants = JsonConvert.DeserializeObject<List<Etudiant>>(json);
-                }
-            }
+            }          
 
             if (etudiants == null)
             {
@@ -68,11 +59,7 @@ namespace CC01.DAL
 
         private void Save()
         {
-            using (StreamWriter sw = new StreamWriter(file.FullName, false))
-            {
-                string json = JsonConvert.SerializeObject(etudiants);
-                sw.WriteLine(json);
-            }
+           
         }
 
         public void Remove(Etudiant etudiant)
@@ -85,10 +72,6 @@ namespace CC01.DAL
         {
             return new List<Etudiant>(etudiants);
         }
-
-        public IEnumerable<Etudiant> Find(Func<Etudiant, bool> predicate)
-        {
-            return new List<Etudiant>(Etudiant.Where(predicate).ToArray());
-        }
+     
     }
 }

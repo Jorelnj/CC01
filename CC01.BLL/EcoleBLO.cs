@@ -27,9 +27,5 @@ namespace CC01.BLL
             ecoleRepo.Remove(ecole);
         }     
         
-        public void EditEcole(Ecole oldEcole, Ecole newEcole)
-        {
-            ecoleRepo.Set(oldEcole, newEcole);
-        }
     }
 }

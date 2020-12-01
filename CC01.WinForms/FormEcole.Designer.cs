@@ -93,6 +93,7 @@
             this.btnCreer.TabIndex = 15;
             this.btnCreer.Text = "Créer";
             this.btnCreer.UseVisualStyleBackColor = false;
+            this.btnCreer.Click += new System.EventHandler(this.btnCreer_Click);
             // 
             // txtNomEcole
             // 

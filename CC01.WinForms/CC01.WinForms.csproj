@@ -73,6 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EcoleDAO.cs" />
     <Compile Include="FormEcole.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -26,17 +26,7 @@ namespace CC01.WinForms
 
         private void loadData()
         {
-            string value = txtRechercher.Text.ToLower();
-            var products = etudiantBLO.GetBy
-            (
-                x =>
-                x.Reference.ToLower().Contains(value) ||
-                x.Name.ToLower().Contains(value)
-            ).OrderBy(x => x.Reference).ToArray();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = products;
-            lblRowCount.Text = $"{dataGridView1.RowCount} rows";
-            dataGridView1.ClearSelection();
+            string value = txtRechercher.Text.ToLower();           
         }
 
         private void txtRechercher_TextChanged(object sender, EventArgs e)

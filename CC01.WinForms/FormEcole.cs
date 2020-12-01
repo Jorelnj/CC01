@@ -21,5 +21,10 @@ namespace CC01.WinForms
         {
             this.Close();
         }
+
+        private void btnCreer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

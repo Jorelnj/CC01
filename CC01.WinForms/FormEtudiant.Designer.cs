@@ -50,6 +50,7 @@
             this.pBoxEtudiant = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtEtudiantQR = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxEtudiant)).BeginInit();
             this.SuspendLayout();
             // 
@@ -263,17 +264,27 @@
             // txtEtudiantQR
             // 
             this.txtEtudiantQR.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEtudiantQR.Location = new System.Drawing.Point(441, 218);
+            this.txtEtudiantQR.Location = new System.Drawing.Point(441, 246);
             this.txtEtudiantQR.Name = "txtEtudiantQR";
             this.txtEtudiantQR.Size = new System.Drawing.Size(224, 22);
             this.txtEtudiantQR.TabIndex = 27;
-            this.txtEtudiantQR.Text = "Entrer le code de l\'etudiant";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(438, 221);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(116, 16);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "Code de l\'etudiant";
             // 
             // FormEtudiant
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 573);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEtudiantQR);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pBoxEtudiant);
@@ -328,6 +339,7 @@
         private System.Windows.Forms.PictureBox pBoxEtudiant;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtEtudiantQR;
+        private System.Windows.Forms.Label label1;
     }
 }
 
