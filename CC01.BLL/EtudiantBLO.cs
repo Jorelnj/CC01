@@ -30,7 +30,17 @@ namespace CC01.BLL
         public IEnumerable<Etudiant> GetAllEtudiants()
         {
             return etudiantRepo.Find();
-        }      
+        }
+
+        public IEnumerable<Etudiant> GetByNom(string nom)
+        {
+            return etudiantRepo.Find(x => x.Nom == nom);
+        }
+
+        public IEnumerable<Etudiant> GetBy(Func<Etudiant, bool> predicate)
+        {
+            return etudiantRepo.Find(predicate);
+        }
 
         public void EditEtudiant(Etudiant oldEtudiant, Etudiant newEtudiant)
         {

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace CC01.BO
 {
-    public class Etudiant : Ecole
+    [Serializable]
+    public class Etudiant
     {
-        public string NomEtudiant { get; set; } 
-        public string PrenomEtudiant { get; set; }
-        public DateTime DateNaissance { get; set; }
+        public string Nom { get; set; } 
+        public string Prenom { get; set; }
+        public DateTime Date { get; set; }
         public string Lieu { get; set; }
         public int Telephone { get; set; }
         public string Email { get; set; }
@@ -22,12 +23,12 @@ namespace CC01.BO
 
         }
 
-        public Etudiant(string nomEtudiant, string prenomEtudiant, DateTime dateNaissance, string lieu, 
+        public Etudiant(string nomEtudiant, string prenomEtudiant, DateTime date, string lieu, 
             int telephone, string email, string identifiant )
         {
-            NomEtudiant = nomEtudiant;
-            PrenomEtudiant = prenomEtudiant;
-            DateNaissance = dateNaissance;
+            Nom = nomEtudiant;
+            Prenom = prenomEtudiant;
+            Date = date;
             Lieu = lieu;
             Telephone = telephone;
             Email = email;
@@ -37,17 +38,17 @@ namespace CC01.BO
         public override bool Equals(object obj)
         {
             return obj is Etudiant etudiant &&
-                   NomEtudiant.Equals(etudiant.NomEtudiant, StringComparison.OrdinalIgnoreCase);
+                   Nom.Equals(etudiant.Nom, StringComparison.OrdinalIgnoreCase);
         }
 
         public override int GetHashCode()
         {
-            return -1304721846 + EqualityComparer<string>.Default.GetHashCode(NomEtudiant);
+            return -1304721846 + EqualityComparer<string>.Default.GetHashCode(Nom);
         }
 
-        public static object Where(Func<Etudiant, bool> predicate)
+        /*public static object Where(Func<Etudiant, bool> predicate)
         {
             throw new NotImplementedException();
-        }
+        }*/
     }
 }

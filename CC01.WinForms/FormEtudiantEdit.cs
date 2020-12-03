@@ -13,9 +13,22 @@ namespace CC01.WinForms
 {
     public partial class FormEtudiantEdit : Form
     {
+        private Action callBack;
+        private Etudiant oldEtudiant;
         public FormEtudiantEdit()
         {
             InitializeComponent();
+        }
+
+        public FormEtudiantEdit(Action callBack) : this()
+        {
+            this.callBack = callBack;
+        }
+
+        public FormEtudiantEdit(Nom nom : this(callBack)
+        {
+            this.oldEtudiant = nom;
+            txtNom.Text = nom.Nom;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

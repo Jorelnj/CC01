@@ -17,12 +17,7 @@ namespace CC01.WinForms
         public FormEtudiantList()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        }    
 
         private void loadData()
         {
@@ -32,6 +27,12 @@ namespace CC01.WinForms
         private void txtRechercher_TextChanged(object sender, EventArgs e)
         {
             loadData();
+        }
+
+        private void btnNouveau_Click(object sender, EventArgs e)
+        {
+            Form f = new FormEtudiantEdit(loadData);
+            f.Show();
         }
     }
 }
