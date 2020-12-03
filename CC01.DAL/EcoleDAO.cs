@@ -1,4 +1,5 @@
 ﻿using CC01.BO;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -30,6 +31,15 @@ namespace CC01.DAL
                 file.Refresh();
             }
 
+            if (file.Length > 0)
+            {
+                using (StreamReader sr = new StreamReader(file.FullName))
+                {
+                    string json = sr.ReadToEnd();
+                    ecoles = JsonConvert.DeserializeObject<List<Ecole>>(json);
+                }
+            }
+
             if (ecoles == null)
             {
                 ecoles = new List<Ecole>();
@@ -45,7 +55,7 @@ namespace CC01.DAL
             if (newIndex >= 0 && oldIndex != newIndex)
                 throw new DuplicateNameException("L'ecole que vous recherchez existe déjà");
             ecoles[oldIndex] = newEcole;
-            //Save();
+            Save();
         }
 
         public void Add(Ecole ecole)
@@ -54,23 +64,27 @@ namespace CC01.DAL
             if (index >= 0)
                 throw new DuplicateNameException("This product reference already exists !");
             ecoles.Add(ecole);
-            //Save();
+            Save();
         }
 
-        /*private void Save()
+        private void Save()
         {
-            ecoles.Save();
-        }*/
+            using (StreamWriter sw = new StreamWriter(file.FullName, false))
+            {
+                string json = JsonConvert.SerializeObject(ecoles);
+                sw.WriteLine(json);
+            }
+        }
 
         public void Remove(Ecole ecole)
         {
-            ecoles.Remove(ecole); //base sur Product.Equals redefini
-            //Save();
+            ecoles.Remove(ecole); //base sur Ecole.Equals redefini
+            Save();
         }
 
-        /*public IEnumerable<Ecole> Find()
+        public IEnumerable<Ecole> Find()
         {
             return new List<Ecole>(ecoles);
-        }*/
+        }
     }
 }

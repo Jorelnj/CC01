@@ -1,4 +1,5 @@
 ﻿using CC01.BO;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,7 +29,16 @@ namespace CC01.DAL
             {
                 file.Create().Close();
                 file.Refresh();
-            }          
+            }      
+            
+            if(file.Length > 0)
+            {
+                using (StreamReader sr = new StreamReader(file.FullName))
+                {
+                    string json = sr.ReadToEnd();
+                    etudiants = JsonConvert.DeserializeObject<List<Etudiant>>(json);
+                }
+            }
 
             if (etudiants == null)
             {
@@ -52,19 +62,23 @@ namespace CC01.DAL
         {
             var index = etudiants.IndexOf(etudiant);
             if (index >= 0)
-                throw new DuplicateNameException("This product reference already exists !");
+                throw new DuplicateNameException("This student reference already exists !");
             etudiants.Add(etudiant);
             Save();
         }
 
         private void Save()
         {
-           
+            using (StreamWriter sw = new StreamWriter(file.FullName, false))
+            {
+                string json = JsonConvert.SerializeObject(etudiants);
+                sw.WriteLine(json);
+            }
         }
 
         public void Remove(Etudiant etudiant)
         {
-            etudiants.Remove(etudiant); //base sur Product.Equals redefini
+            etudiants.Remove(etudiant); //base sur Etudiant.Equals redefini
             Save();
         }
 
@@ -72,6 +86,10 @@ namespace CC01.DAL
         {
             return new List<Etudiant>(etudiants);
         }
-     
+
+        public IEnumerable<Etudiant> Find(Func<Etudiant, bool> predicate)
+        {
+            return new List<Etudiant>(etudiants.Where(predicate).ToArray());
+        }
     }
 }
